@@ -1,17 +1,14 @@
 class Dollar extends Money {
-  private int amount;
-
-  Dollar(int amount) {
-    this.amount = amount;
-  }
-
-  Money times(int multiplier)  {
-      return new Dollar(amount * multiplier);
-   
-  }
-
-  public boolean equals(Object object) {
-    Dollar dollar = (Dollar) object;
-    return amount == dollar.amount;
-  }
+   private String currency;
+	
+ Dollar(int amount, String currency)  {
+      super(amount, currency);
+   }
+	
+   Money times(int multiplier)  {
+      return Money.dollar(amount * multiplier);
+   }
+  String currency() {
+      return currency;
+   }
 }
